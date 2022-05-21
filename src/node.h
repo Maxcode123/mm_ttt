@@ -1,18 +1,41 @@
 #pragma once
 #include <vector>
+#include "board.h"
 
-struct RootNode;
 struct ChildNode;
-struct Node;
 
-typedef struct Node 
+struct Node 
 {
     std::vector<ChildNode*> children;
     Node* parent;
-} Node;
+};
 
-typedef struct RootNode: Node
-{} RootNode;
+struct RootNode:Node
+{
+    Board* board;
+    RootNode() {
+        parent = NULL;
+        board = NULL;
+    }
+};
 
-typedef struct ChildNode: Node
-{} ChildNode;
+struct ChildNode:Node
+{
+    Position* position;
+    ChildNode() {
+        parent = NULL;
+        position = NULL;
+    }
+    ChildNode(Node* p) {
+        parent = p;
+        position = NULL;
+    }
+    ChildNode(Position* pos) {
+        parent = NULL;
+        position = pos;
+    }
+    ChildNode(Node* p, Position* pos) {
+        parent = p;
+        position = pos;
+    }
+};
