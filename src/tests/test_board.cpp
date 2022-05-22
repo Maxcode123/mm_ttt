@@ -1,6 +1,6 @@
 #include <vector>
-#include "../board.h"
-#include "../over_iostream.h"
+#include "../headers/board.h"
+#include "../headers/over_iostream.h"
 
 int main() {
     Board b = Board();

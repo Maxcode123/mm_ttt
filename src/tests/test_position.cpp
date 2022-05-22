@@ -1,6 +1,6 @@
 #include <assert.h>
-#include "../over_iostream.h"
-#include "../position.h"
+#include "../headers/over_iostream.h"
+#include "../headers/position.h"
 
 void test_Position_constructor();
 

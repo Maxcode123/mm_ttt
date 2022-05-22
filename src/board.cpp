@@ -2,9 +2,9 @@
 #include <cstdlib>
 #include <algorithm>
 #include <stdexcept>
-#include "board.h"
-#include "position.h"
-#include "over_iostream.h"
+#include "headers/board.h"
+#include "headers/position.h"
+#include "headers/over_iostream.h"
 
 void Board::add_X(Position* x) {
     if (!valid_position(x)) {

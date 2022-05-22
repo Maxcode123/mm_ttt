@@ -1,6 +1,5 @@
-#include "over_iostream.h"
-#include "position.h"
-#include <iostream>
+#include "headers/over_iostream.h"
+#include "headers/position.h"
 
 std::ostream& operator<<(std::ostream &s, const Position &position) {
     return s << "(" << position.x << ", " << position.y << ")";
