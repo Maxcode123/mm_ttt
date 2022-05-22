@@ -35,6 +35,7 @@ void Board::clear_empty_position(Position* p) {
     for (Position* ep : empty_positions) {
         if (ep->equals(*p)) {
             std::remove(empty_positions.begin(), empty_positions.end(), ep);
+            free(ep);
         } 
     }
 }
