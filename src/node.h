@@ -17,6 +17,10 @@ struct RootNode:Node
         parent = NULL;
         board = NULL;
     }
+    RootNode(Board* b) {
+        parent = NULL;
+        board = b;
+    }
 };
 
 struct ChildNode:Node

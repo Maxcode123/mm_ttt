@@ -2,6 +2,7 @@
 #include <iostream>
 #include "node.h"
 #include "position.h"
+#include "board.h"
 
 void test_RootNode_constructor();
 
@@ -14,6 +15,10 @@ void test_RootNode_constructor() {
     RootNode n = RootNode();
     assert(n.parent == NULL);
     assert(n.board == NULL);
+    Board b = Board();
+    n = RootNode(&b);
+    assert(n.parent == NULL);
+    assert(n.board == &b);
 }
 
 void test_ChildNode_constructor() {
