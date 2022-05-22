@@ -27,5 +27,9 @@ test-position:
 	$(CPP) src/tests/test_position.cpp src/position.cpp src/over_iostream.cpp -o bin/tests/test_position
 	bin/tests/test_position
 
+test-minimax:
+	$(CPP) src/tests/test_minimax.cpp src/minimax.cpp src/over_iostream.cpp src/board.cpp src/position.cpp -o bin/tests/test_minimax
+	bin/tests/test_minimax
+
 clean:
 	rm -rf $(BINDIR)/* $(OBJ)/*
