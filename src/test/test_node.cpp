@@ -1,8 +1,8 @@
 #include <assert.h>
-#include <iostream>
-#include "node.h"
-#include "position.h"
-#include "board.h"
+#include "../over_iostream.h"
+#include "../node.h"
+#include "../position.h"
+#include "../board.h"
 
 void test_RootNode_constructor();
 
