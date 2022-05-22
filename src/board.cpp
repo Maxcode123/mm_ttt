@@ -1,8 +1,10 @@
 #include <vector>
 #include <cstdlib>
 #include <algorithm>
+#include <stdexcept>
 #include "board.h"
 #include "position.h"
+#include "over_iostream.h"
 
 void Board::add_X(Position* x) {
     X.push_back(x);
@@ -32,10 +34,15 @@ void Board::init_positions() {
 }
 
 void Board::clear_empty_position(Position* p) {
+    int i = 0;
     for (Position* ep : empty_positions) {
         if (ep->equals(*p)) {
-            std::remove(empty_positions.begin(), empty_positions.end(), ep);
+            empty_positions.erase(empty_positions.begin() + i);
             free(ep);
-        } 
+            return;
+        }
+        i++;
     }
+    throw std::invalid_argument("in Board::clear_empty_position: " 
+    "argument position not found in empty positions");
 }
