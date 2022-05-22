@@ -9,5 +9,5 @@ int main() {
     RootNode* r_ptr = &r;
     MiniMax mm = MiniMax();
     mm.create_children(r_ptr);
-    for (ChildNode* c : r_ptr->children) std::cout << c->position << "\n";
+    for (ChildNode* c : r_ptr->children) std::cout << *c << "\n";
 }
