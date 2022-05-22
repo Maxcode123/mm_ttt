@@ -25,4 +25,7 @@ private:
     std::vector<Position*> empty_positions;
     void init_positions();
     void clear_empty_position(Position *p);
+    bool valid_position(Position* p);
+    bool valid_x(int x);
+    bool valid_y(int y);
 };

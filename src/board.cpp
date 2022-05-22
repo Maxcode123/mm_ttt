@@ -7,11 +7,17 @@
 #include "over_iostream.h"
 
 void Board::add_X(Position* x) {
+    if (!valid_position(x)) {
+        throw std::invalid_argument("in Board::add_X: invalid position.");
+        }
     X.push_back(x);
     clear_empty_position(x);
 }
 
 void Board::add_O(Position* o) {
+    if (!valid_position(o)) {
+        throw std::invalid_argument("in Board::add_O: invalid position.");
+        }
     O.push_back(o);
     clear_empty_position(o);
 }
@@ -45,4 +51,19 @@ void Board::clear_empty_position(Position* p) {
     }
     throw std::invalid_argument("in Board::clear_empty_position: " 
     "argument position not found in empty positions");
+}
+
+bool Board::valid_position(Position* p) {
+    if (valid_x(p->x) && valid_y(p->y)) return true;
+    return false;
+}
+
+bool Board::valid_x(int x) {
+    if (x >= x_boundaries[0] && x <= x_boundaries[1]) return true;
+    return false;
+}
+
+bool Board::valid_y(int y) {
+    if (y >= y_boundaries[0] && y <= y_boundaries[1]) return true;
+    return false;
 }
