@@ -15,6 +15,8 @@ public:
         }
     void add_X(Position* x);
     void add_O(Position* o);
+    std::vector<Position*> get_X();
+    std::vector<Position*> get_O();
     void random_position(Position* pos);
     std::vector<Position*>* available_positions();
 private:

@@ -22,6 +22,14 @@ void Board::add_O(Position* o) {
     clear_empty_position(o);
 }
 
+std::vector<Position*> Board::get_X() {
+    return X;
+}
+
+std::vector<Position*> Board::get_O() {
+    return O;
+}
+
 void Board::random_position(Position* pos) {}
 
 std::vector<Position*>* Board::available_positions() {
