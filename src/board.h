@@ -7,6 +7,7 @@ class Board
 public:
     std::vector<Position*> X;
     std::vector<Position*> O;
+    Board() {}
     void add_X(Position* x);
     void add_O(Position* o);
     void random_position(Position* pos);
