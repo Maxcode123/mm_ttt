@@ -18,7 +18,7 @@ public:
     std::vector<Position*> get_X();
     std::vector<Position*> get_O();
     void random_position(Position* pos);
-    std::vector<Position*>* available_positions();
+    std::vector<Position*> available_positions();
 private:
     int x_boundaries[2];
     int y_boundaries[2];

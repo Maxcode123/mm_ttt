@@ -32,8 +32,8 @@ std::vector<Position*> Board::get_O() {
 
 void Board::random_position(Position* pos) {}
 
-std::vector<Position*>* Board::available_positions() {
-    return &empty_positions;
+std::vector<Position*> Board::available_positions() {
+    return empty_positions;
 }
 
 void Board::init_positions() {
