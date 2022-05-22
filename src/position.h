@@ -6,4 +6,5 @@ public:
     int y;
     Position(int a, int b): x{a}, y{b} {}
     Position(): x{0}, y{0} {}
+    bool equals(Position position);
 };

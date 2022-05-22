@@ -5,5 +5,7 @@
 int main() {
     Board b = Board();
     std::vector<Position*>* v = b.available_positions();
-    for (Position* p : *v) {std::cout << *p;};
+    Position p = Position();
+    b.add_X(&p);
+    for (Position* p : *v) {std::cout << *p << "\n";};
 }
