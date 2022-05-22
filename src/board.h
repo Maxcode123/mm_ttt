@@ -16,4 +16,5 @@ private:
     std::vector<Position*> O;
     std::vector<Position*> empty_positions;
     void init_positions();
+    void clear_empty_position(Position *p);
 };

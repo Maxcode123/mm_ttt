@@ -1,14 +1,17 @@
 #include <vector>
 #include <cstdlib>
+#include <algorithm>
 #include "board.h"
 #include "position.h"
 
 void Board::add_X(Position* x) {
     X.push_back(x);
+    clear_empty_position(x);
 }
 
 void Board::add_O(Position* o) {
     O.push_back(o);
+    clear_empty_position(o);
 }
 
 void Board::random_position(Position* pos) {}
@@ -25,5 +28,13 @@ void Board::init_positions() {
             pos_ptr->y = j;
             empty_positions.push_back(pos_ptr);
         }
+    }
+}
+
+void Board::clear_empty_position(Position* p) {
+    for (Position* ep : empty_positions) {
+        if (ep->equals(*p)) {
+            std::remove(empty_positions.begin(), empty_positions.end(), ep);
+        } 
     }
 }
